@@ -9,8 +9,10 @@
   <ItemGroup>
     <None Remove="Base\CreateDb.sql" />
     <None Remove="Base\InitData.sql" />
+    <None Remove="Base\Insert_Item.sql" />
     <None Remove="Base\Select_All_Items.sql" />
     <None Remove="Base\Select_Item_ById.sql" />
+    <None Remove="Base\Update_Item.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +22,13 @@
     <EmbeddedResource Include="Base\InitData.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Base\Update_Item.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\Select_All_Items.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Insert_Item.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Select_Item_ById.sql">

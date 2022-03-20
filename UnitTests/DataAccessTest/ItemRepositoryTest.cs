@@ -23,6 +23,8 @@ namespace UnitTests.DataAccessTest
 								  Assert.NotNull(item.Category);
 								  Assert.Equal(101, item.Category.Code);
 								  Assert.Equal("Book", item.Category.Name);
+								  Assert.Equal("Lewis Carroll", item.Author);
+								  Assert.NotNull(item.Description);
 							  },
 							  item =>
 							  {
@@ -31,6 +33,8 @@ namespace UnitTests.DataAccessTest
 								  Assert.NotNull(item.Category);
 								  Assert.Equal(101, item.Category.Code);
 								  Assert.Equal("Book", item.Category.Name);
+								  Assert.Equal("J. K. Rowling", item.Author);
+								  Assert.NotNull(item.Description);
 							  });
 		}
 
@@ -46,6 +50,8 @@ namespace UnitTests.DataAccessTest
 			Assert.NotNull(item.Category);
 			Assert.Equal(101, item.Category.Code);
 			Assert.Equal("Book", item.Category.Name);
+			Assert.Equal("Lewis Carroll", item.Author);
+			Assert.NotNull(item.Description);
 
 			item = itemRepository.GetById(800);
 			Assert.Null(item);
@@ -73,10 +79,13 @@ namespace UnitTests.DataAccessTest
 			Assert.NotNull(item.Category);
 			Assert.Equal(102, item.Category.Code);
 			Assert.Equal("Magazine", item.Category.Name);
+			Assert.Null(item.Author);
+			Assert.Null(item.Description);
 
 
 			createdItem.Name = "New York History";
 			createdItem.Category = categoryRepository.GetByName("DVD");
+			createdItem.Description = "It is a fantastic documentary about New York City.";
 			itemRepository.Update(createdItem);
 
 			Item updatedItem = itemRepository.GetById(3);
@@ -86,6 +95,8 @@ namespace UnitTests.DataAccessTest
 			Assert.NotNull(updatedItem.Category);
 			Assert.Equal(103, updatedItem.Category.Code);
 			Assert.Equal("DVD", updatedItem.Category.Name);
+			Assert.Null(updatedItem.Author);
+			Assert.Equal("It is a fantastic documentary about New York City.", updatedItem.Description);
 
 			itemRepository.Delete(3);
 			item = itemRepository.GetById(3);

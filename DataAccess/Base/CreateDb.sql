@@ -12,6 +12,8 @@ CREATE TABLE [Item] (
 	Id				[int]				NOT NULL, 
 	Name			[varchar]	(200)	NOT NULL, 
 	CategoryCode	[int]				NOT NULL,
+	Author			[varchar]	(200)	NULL, 
+	Description		[varchar]	(1000)	NULL,
 
 	PRIMARY KEY (Id) 
 );

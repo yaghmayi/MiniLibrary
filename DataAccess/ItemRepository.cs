@@ -32,12 +32,14 @@ namespace MiniLibrary.DataAccess
 				while (dr.Read())
 				{
 					Item item = new Item();
-					item.Id = Convert.ToInt32(dr["item_id"]);
-					item.Name = Convert.ToString(dr["item_name"].ToString());
+					item.Id = GetColumnValue<int>(dr, "item_id");
+					item.Name = GetColumnValue<string>(dr, "item_name");
+					item.Author = GetColumnValue<string>(dr, "item_author");
+					item.Description = GetColumnValue<string>(dr, "item_description");
 
 					item.Category = new Category();
-					item.Category.Code = Convert.ToInt32(dr["category_code"]);
-					item.Category.Name = Convert.ToString(dr["category_name"]);
+					item.Category.Code = GetColumnValue<int>(dr, "category_code");
+					item.Category.Name = GetColumnValue<string>(dr, "category_name");
 
 					items.Add(item);
 				}
@@ -66,12 +68,14 @@ namespace MiniLibrary.DataAccess
 				if (dr.Read())
 				{
 					item = new Item();
-					item.Id = Convert.ToInt32(dr["item_id"]);
-					item.Name = Convert.ToString(dr["item_name"].ToString());
+					item.Id = GetColumnValue<int>(dr, "item_id");
+					item.Name = GetColumnValue<string>(dr, "item_name");
+					item.Author = GetColumnValue<string>(dr, "item_author");
+					item.Description = GetColumnValue<string>(dr, "item_description");
 
 					item.Category = new Category();
-					item.Category.Code = Convert.ToInt32(dr["category_code"]);
-					item.Category.Name = Convert.ToString(dr["category_name"]);
+					item.Category.Code = GetColumnValue<int>(dr, "category_code");
+					item.Category.Name = GetColumnValue<string>(dr, "category_name");
 				}
 
 				dr.Close();
@@ -88,14 +92,19 @@ namespace MiniLibrary.DataAccess
 			{
 				dbConnection.Open();
 
-				SQLiteCommand sqlCommand = new SQLiteCommand("insert into Item (Id,Name,CategoryCode) values (@Id,@Name,@CategoryCode)", dbConnection);
+				string sql = _libraryDb.GetScript("Insert_Item.sql");
+				SQLiteCommand sqlCommand = new SQLiteCommand(sql, dbConnection);
 
 				sqlCommand.Parameters.Add("@Id", DbType.Int32);
 				sqlCommand.Parameters.Add("@Name", DbType.String);
 				sqlCommand.Parameters.Add("@CategoryCode", DbType.Int32);
+				sqlCommand.Parameters.Add("@Author", DbType.String);
+				sqlCommand.Parameters.Add("@Description", DbType.String);
 				sqlCommand.Parameters["@Id"].Value = item.Id;
 				sqlCommand.Parameters["@Name"].Value = item.Name;
 				sqlCommand.Parameters["@CategoryCode"].Value = item.Category.Code;
+				sqlCommand.Parameters["@Author"].Value = item.Author;
+				sqlCommand.Parameters["@Description"].Value = item.Description;
 
 				sqlCommand.ExecuteNonQuery();
 				dbConnection.Close();
@@ -108,14 +117,19 @@ namespace MiniLibrary.DataAccess
 			{
 				dbConnection.Open();
 
-				SQLiteCommand sqlCommand = new SQLiteCommand("update Item set Name=@Name, CategoryCode=@CategoryCode where Id=@Id", dbConnection);
+				string sql = _libraryDb.GetScript("Update_Item.sql");
+				SQLiteCommand sqlCommand = new SQLiteCommand(sql, dbConnection);
 
 				sqlCommand.Parameters.Add("@Id", DbType.Int32);
 				sqlCommand.Parameters.Add("@Name", DbType.String);
 				sqlCommand.Parameters.Add("@CategoryCode", DbType.Int32);
+				sqlCommand.Parameters.Add("@Author", DbType.String);
+				sqlCommand.Parameters.Add("@Description", DbType.String);
 				sqlCommand.Parameters["@Id"].Value = item.Id;
 				sqlCommand.Parameters["@Name"].Value = item.Name;
 				sqlCommand.Parameters["@CategoryCode"].Value = item.Category.Code;
+				sqlCommand.Parameters["@Author"].Value = item.Author;
+				sqlCommand.Parameters["@Description"].Value = item.Description;
 
 				sqlCommand.ExecuteNonQuery();
 
@@ -155,6 +169,18 @@ namespace MiniLibrary.DataAccess
 			}
 
 			return nextId;
+		}
+
+		private T GetColumnValue<T>(SQLiteDataReader dataReader, string columnName)
+		{
+			T columnValue = default(T);
+
+			if (dataReader[columnName] != DBNull.Value)
+			{
+				columnValue = (T) Convert.ChangeType(dataReader[columnName], typeof(T));
+			}
+
+			return columnValue;
 		}
 	}
 }

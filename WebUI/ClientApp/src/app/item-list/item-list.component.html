@@ -13,14 +13,16 @@
     <thead>
       <th>Name</th>
       <th>Category</th>
+      <th>Author/Composer</th>
+      
       <th></th>
     </thead>
 
     <tbody>
       <tr *ngFor="let item of items">
         <td>{{item.name}}</td>
-
         <td>{{item.category.name}}</td>
+        <td>{{item.author}}</td>
 
         <td>
           <a href="/additem?id={{item.id}}">
