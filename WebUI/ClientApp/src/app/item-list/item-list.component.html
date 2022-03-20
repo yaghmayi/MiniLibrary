@@ -20,10 +20,10 @@
       <tr *ngFor="let item of items">
         <td>{{item.name}}</td>
 
-        <td>{{item.farm.name}}</td>
+        <td>{{item.category.name}}</td>
 
         <td>
-          <a href="/items?id={{item.id}}">
+          <a href="/additem?id={{item.id}}">
             Edit
           </a>
         </td>

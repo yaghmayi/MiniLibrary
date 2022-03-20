@@ -51,12 +51,12 @@ export class ItemEditComponent {
   }
 
   onCancel() {
-    this.route.navigate(['/listitem']);
+    this.route.navigate(['/listitems']);
   }
 
   onDelete() {
     if (window.confirm("Are you sure to delete the Item?")) {
-       this.service.deleteItem(this.item.id).subscribe(() => { this.route.navigate(['/listitem']); });
+       this.service.deleteItem(this.item.id).subscribe(() => { this.route.navigate(['/listitems']); });
     }
   }
 

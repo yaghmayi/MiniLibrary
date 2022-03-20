@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using MiniLibrary.Business;
+using MiniLibrary.Business.Interfaces;
 using MiniLibrary.Models;
 
 namespace MiniLibrary.UI.Controllers
@@ -9,10 +10,10 @@ namespace MiniLibrary.UI.Controllers
 	public class ItemsController : Controller
 	{
 		
-		private readonly ItemManager _itemManager;
-		private readonly CategoryManager _categoryManager;
+		private readonly IItemManager _itemManager;
+		private readonly ICategoryManager _categoryManager;
 
-		public ItemsController(ItemManager itemManager, CategoryManager categoryManager)
+		public ItemsController(IItemManager itemManager, ICategoryManager categoryManager)
 		{
 			this._itemManager = itemManager;
             this._categoryManager = categoryManager;

@@ -9,3 +9,8 @@
 /WebUI/ClientApp/package-lock.json
 /MiniLibrary.sln.DotSettings.user
 /.vs/MiniLibrary/v16
+/.vs/MiniLibrary/config
+/Business/bin/Debug/netcoreapp3.1
+/DataAccess/bin/Debug/netcoreapp3.1
+/Models/bin/Debug/netcoreapp3.1
+/UnitTests/bin/Debug/netcoreapp3.1
