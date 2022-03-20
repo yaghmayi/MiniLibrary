@@ -10,7 +10,7 @@ using MiniLibrary.Business.Interfaces;
 using MiniLibrary.DataAccess;
 using MiniLibrary.DataAccess.Interfaces;
 
-namespace MiniLibrary.UI
+namespace MiniLibrary.WebUI
 {
     public class Startup
     {

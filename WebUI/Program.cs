@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace MiniLibrary.UI
+namespace MiniLibrary.WebUI
 {
     public class Program
     {

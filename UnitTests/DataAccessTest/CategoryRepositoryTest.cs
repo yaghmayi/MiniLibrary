@@ -4,7 +4,7 @@ using MiniLibrary.DataAccess.Interfaces;
 using MiniLibrary.Models;
 using Xunit;
 
-namespace UnitTests.DataAccessTest
+namespace MiniLibrary.UnitTests.DataAccessTest
 {
 	[Collection("Sequential")]
 	public class CategoryRepositoryTest
