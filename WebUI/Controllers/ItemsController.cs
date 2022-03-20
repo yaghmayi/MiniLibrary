@@ -16,8 +16,8 @@ namespace MiniLibrary.WebUI.Controllers
 		public ItemsController(IItemManager itemManager, ICategoryManager categoryManager)
 		{
 			this._itemManager = itemManager;
-            this._categoryManager = categoryManager;
-        }
+			this._categoryManager = categoryManager;
+		}
 
 		[HttpGet]
 		[Route("list")]
@@ -55,13 +55,13 @@ namespace MiniLibrary.WebUI.Controllers
 			return Ok();
 		}
 
-        [HttpGet]
-        [Route("categories")]
-        public List<Category> GetCategories()
-        {
-            List<Category> categories = _categoryManager.GetAll();
+		[HttpGet]
+		[Route("categories")]
+		public List<Category> GetCategories()
+		{
+			List<Category> categories = _categoryManager.GetAll();
 
-            return categories;
-        }
+			return categories;
+		}
 	}
 }

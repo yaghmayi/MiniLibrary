@@ -48,7 +48,5 @@ namespace MiniLibrary.UnitTests.DataAccessTest
 			category = categoryRepository.GetByName("NotExistName");
 			Assert.Null(category);
 		}
-
-
 	}
 }
