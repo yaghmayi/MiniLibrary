@@ -1,4 +1,4 @@
-'MiniLibrary' sample project is defined by Visma company
+'MiniLibrary' sample project is defined by Visma company.
 
 Steps to run the project:
 	1- Open 'MiniLibrary/MiniLibrary.sln' file in Microsoft Visual Studio (2019 or newer)
