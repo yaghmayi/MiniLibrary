@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Models/obj
+/UnitTests/obj
+/Business/obj
+/DataAccess/obj
+/WebUI/ClientApp/package-lock.json
+/MiniLibrary.sln.DotSettings.user
+/.vs/MiniLibrary/v16

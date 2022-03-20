@@ -1,0 +1,33 @@
+<div>
+  <h3>
+    <u>Items List</u>
+  </h3>
+</div>
+
+<div align="right">
+  <a href="/additem?id=-1" class="btn btn-primary">Add Item</a>
+</div>
+
+<div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <th>Name</th>
+      <th>Category</th>
+      <th></th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.name}}</td>
+
+        <td>{{item.farm.name}}</td>
+
+        <td>
+          <a href="/items?id={{item.id}}">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

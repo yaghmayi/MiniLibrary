@@ -1,0 +1,1 @@
+{"version":3,"file":"alpaca.service.js","sourceRoot":"","sources":["alpaca.service.ts"],"names":[],"mappings":";;AAGA;IAIE,uBAA6B,IAAgB;QAAhB,SAAI,GAAJ,IAAI,CAAY;QAC3C,IAAI,CAAC,gBAAgB,GAAG,uBAAuB,CAAC;IAClD,CAAC;IAED,qCAAa,GAAb;QACE,OAAO,IAAI,CAAC,IAAI,CAAC,GAAG,CAAY,IAAI,CAAC,gBAAgB,GAAG,MAAM,CAAC,CAAC;IAClE,CAAC;IACH,oBAAC;AAAD,CAAC,AAXD,IAWC;AAXY,sCAAa"}
