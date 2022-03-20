@@ -6,7 +6,7 @@ using MiniLibrary.DataAccess.Interfaces;
 using MiniLibrary.Models;
 using Xunit;
 
-namespace MiniLibrary.UnitTests.DataAccessTest
+namespace MiniLibrary.UnitTests.BusinessTest
 {
 	[Collection("Sequential")]
 	public class ItemManagerTest
@@ -14,8 +14,7 @@ namespace MiniLibrary.UnitTests.DataAccessTest
 		[Fact]
 		public void GetAll()
 		{
-			IItemRepository itemRepository = new ItemRepository();
-			IItemManager itemManager = new ItemManager(itemRepository);
+			IItemManager itemManager = new ItemManager(new ItemRepository());
 			List<Item> items = itemManager.GetAll();
 
 			Assert.Collection(items,
@@ -44,8 +43,7 @@ namespace MiniLibrary.UnitTests.DataAccessTest
 		[Fact]
 		public void GetById()
 		{
-			IItemRepository itemRepository = new ItemRepository();
-			IItemManager itemManager = new ItemManager(itemRepository);
+			IItemManager itemManager = new ItemManager(new ItemRepository());
 			Item item = itemManager.GetById(1);
 
 			Assert.NotNull(item);
@@ -64,8 +62,7 @@ namespace MiniLibrary.UnitTests.DataAccessTest
 		[Fact]
 		public void Add_Update_Delete()
 		{
-			IItemRepository itemRepository = new ItemRepository();
-			IItemManager itemManager = new ItemManager(itemRepository);
+			IItemManager itemManager = new ItemManager(new ItemRepository());
 
 			ICategoryRepository categoryRepository = new CategoryRepository();
 			ICategoryManager categoryManager = new CategoryManager(categoryRepository);
@@ -106,13 +103,6 @@ namespace MiniLibrary.UnitTests.DataAccessTest
 			itemManager.Delete(3);
 			item = itemManager.GetById(3);
 			Assert.Null(item);
-		}
-
-		[Fact]
-		public void GetNextId()
-		{
-			IItemRepository itemRepository = new ItemRepository();
-			Assert.Equal(3, itemRepository.GetNextId());
 		}
 	}
 }

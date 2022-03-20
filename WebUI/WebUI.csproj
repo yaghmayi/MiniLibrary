@@ -13,7 +13,7 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <AssemblyName>MiniLibrary.WebUI</AssemblyName>
-    <RootNamespace>Alpacinator.WebUI</RootNamespace>
+    <RootNamespace>MiniLibrary.WebUI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

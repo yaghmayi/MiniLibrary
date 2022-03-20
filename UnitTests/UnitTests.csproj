@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>MiniLibrary.UnitTests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,7 @@
     <ProjectReference Include="..\Business\Business.csproj" />
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\WebUI\WebUI.csproj" />
   </ItemGroup>
 
 </Project>
