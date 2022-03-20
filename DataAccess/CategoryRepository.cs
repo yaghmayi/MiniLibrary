@@ -42,7 +42,7 @@ namespace MiniLibrary.DataAccess
 			}
 
 			return categories;
-        }
+		}
 
 		public Category GetByName(string categoryName)
 		{
