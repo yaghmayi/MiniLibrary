@@ -12,8 +12,8 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
-    <AssemblyName>MiniLibrary.UI</AssemblyName>
-    <RootNamespace>Alpacinator.UI</RootNamespace>
+    <AssemblyName>MiniLibrary.WebUI</AssemblyName>
+    <RootNamespace>Alpacinator.WebUI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,7 +5,7 @@
 </div>
 
 <div align="right">
-  <a href="/additem?id=-1" class="btn btn-primary">Add Item</a>
+  <a href="/edititem?id=-1" class="btn btn-primary">Add Item</a>
 </div>
 
 <div>
@@ -13,7 +13,7 @@
     <thead>
       <th>Name</th>
       <th>Category</th>
-      <th>Author/Composer</th>
+      <th>Author / Composer</th>
       
       <th></th>
     </thead>
@@ -25,7 +25,7 @@
         <td>{{item.author}}</td>
 
         <td>
-          <a href="/additem?id={{item.id}}">
+          <a href="/edititem?id={{item.id}}">
             Edit
           </a>
         </td>

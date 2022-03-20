@@ -23,7 +23,7 @@ import { HttpHelpersService } from "./services/http-helpers.service";
     RouterModule.forRoot([
       { path: '', component: ItemListComponent },
       { path: 'listitems', component: ItemListComponent },
-      { path: 'additem', component: ItemEditComponent }
+      { path: 'edititem', component: ItemEditComponent }
     ])
   ],
   providers: [

@@ -4,7 +4,7 @@ using MiniLibrary.Business;
 using MiniLibrary.Business.Interfaces;
 using MiniLibrary.Models;
 
-namespace MiniLibrary.UI.Controllers
+namespace MiniLibrary.WebUI.Controllers
 {
 	[Route("minilibrary/api/items")]
 	public class ItemsController : Controller
